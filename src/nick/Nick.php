@@ -20,6 +20,7 @@ class Nick extends PluginBase implements Listener {
     public function onEnable() {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);    
         $this->getLogger()->info(TextFormat::GREEN . "Nick Activate By Callum");
+	$this->getServer()->getCommandMap()->register("nickname", new NickUICommand($this));
     }
     public function onDisable() {
         $this->getLogger()->info(TextFormat::RED . "Nick Deactivate By Callum");
