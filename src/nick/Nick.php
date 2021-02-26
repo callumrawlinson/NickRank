@@ -20,7 +20,6 @@ class Nick extends PluginBase implements Listener {
     public function onEnable() {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);    
         $this->getLogger()->info(TextFormat::GREEN . "Nick Activate By Callum");
-	$this->getServer()->getCommandMap()->register("nickname", new NickUICommand($this));
     }
     public function onDisable() {
         $this->getLogger()->info(TextFormat::RED . "Nick Deactivate By Callum");
@@ -52,14 +51,14 @@ class Nick extends PluginBase implements Listener {
                     $this->getServer()->dispatchCommand($sender, "nick");
                 break;   
                case 1:
-                    $this->getServer()->dispatchCommand($sender, "rank");
+                    $this->getServer()->dispatchCommand($sender, "mma");
                 break;   
                   }
         });
         $form->setTitle("§f§lNickUI");
         $form->setContent("§7NickUI with Rank Changer §b@CallumRawlinson");
-        $form->addButton("§l§eChange Nickname\n§r§0Select",0,"textures/ui/conduit_power_effect");
-        $form->addButton("§l§bChange Rank\n§r§0Select",1,"textures/ui/invisibility_effect");        
+        $form->addButton("§l§eChange Nickname\n§r§0Select",0,"textures/ui/conduit_power_effect");  
+	$form->addButton("§l§eChange Rank\n§r§0Select",1,"textures/ui/conduit_power_effect");  
         $form->sendToPlayer($sender);
             return $form;
   
